@@ -25,6 +25,20 @@
     <script src="script.js" defer></script>
   </head>
   <body>
+    <svg class="icon-sprite" aria-hidden="true">
+      <symbol id="icon-arrow-up-right" viewBox="0 0 24 24">
+        <path d="M7 7h10v10" />
+        <path d="M7 17 17 7" />
+      </symbol>
+      <symbol id="icon-arrow-down-right" viewBox="0 0 24 24">
+        <path d="m7 7 10 10" />
+        <path d="M17 7v10H7" />
+      </symbol>
+      <symbol id="icon-arrow-right" viewBox="0 0 24 24">
+        <path d="M5 12h14" />
+        <path d="m13 6 6 6-6 6" />
+      </symbol>
+    </svg>
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header" data-header>
@@ -51,31 +65,57 @@
             We’re building a 24 Hours of Lemons team that turns every scrappy lap into a stronger foundation for causes that matter.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#mission">See the mission <span aria-hidden="true">↘</span></a>
-            <a class="text-link" href="https://events.alz.org/event/dowhatyoulove/register-select" target="_blank" rel="noreferrer">Explore Do What You Love to End ALZ <span aria-hidden="true">↗</span></a>
+            <a class="button button-primary" href="#mission">See the mission <svg class="icon" aria-hidden="true"><use href="#icon-arrow-down-right"></use></svg></a>
+            <a class="text-link" href="https://events.alz.org/event/dowhatyoulove/register-select" target="_blank" rel="noreferrer">Explore Do What You Love to End ALZ <svg class="icon" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a>
           </div>
           <p class="hero-note">Season one supports the Alzheimer’s Association. Our official campaign link will be added when it goes live.</p>
         </div>
 
-        <div class="hero-art" aria-label="Stylized Beaver Dam race car illustration" role="img" data-reveal>
+        <div class="hero-art" aria-label="Stylized Beaver Dam race car climbing the hill at Spa-Francorchamps" role="img" data-reveal>
           <div class="sun-disc"></div>
           <div class="speed-line speed-line-one"></div>
           <div class="speed-line speed-line-two"></div>
-          <svg class="race-car" viewBox="0 0 760 360" aria-hidden="true">
-            <path class="car-shadow" d="M78 296c82-23 501-31 611 2 30 9 18 27-25 31-166 14-434 10-567-4-50-5-60-17-19-29Z" />
-            <path class="car-body" d="M95 248c14-39 40-65 85-78l118-31 59-68h170l86 99c42 6 70 23 88 52l13 48-44 21H129l-54-20 20-23Z" />
-            <path class="car-roof" d="m327 143 48-56h139l48 56H327Z" />
-            <path class="window" d="m373 132 31-37h42v37h-73Zm83 0V95h52l33 37h-85Z" />
-            <path class="paper-stripe" d="M115 229h333l33 44H99l16-44Z" />
-            <path class="purple-stripe" d="m236 170 301-1 22 26-333 1 10-26Z" />
-            <path class="door-line" d="M448 170v98M293 170l-15 98M560 169l29 99" />
-            <circle class="wheel-outer" cx="209" cy="275" r="62" />
-            <circle class="wheel-inner" cx="209" cy="275" r="26" />
-            <circle class="wheel-outer" cx="592" cy="275" r="62" />
-            <circle class="wheel-inner" cx="592" cy="275" r="26" />
-            <path class="headlight" d="m661 213 31 15 8 28-42-7 3-36Z" />
-            <text class="car-number" x="342" y="246">24</text>
-            <text class="car-name" x="154" y="216">BEAVER DAM</text>
+          <svg class="spa-scene" viewBox="0 0 820 560" aria-hidden="true">
+            <g class="spa-forest">
+              <path d="M470 68 492 25l14 29 20-43 26 54 19-31 23 47 20-22 27 52H460Z" />
+              <path d="M600 111 621 67l13 25 25-52 26 55 17-29 28 57H586Z" />
+              <path d="M686 150 707 105l14 27 22-48 28 60 17-32 26 55H674Z" />
+            </g>
+            <path class="spa-runoff" d="M37 553 269 553 760 126 677 103Z" />
+            <path class="spa-track" d="M150 560 548 560 743 121 688 110 503 348Z" />
+            <path class="spa-track-shadow" d="M446 560 548 560 743 121 710 126Z" />
+            <path class="spa-edge spa-edge-left" d="M129 560 162 560 705 113 677 103Z" />
+            <path class="spa-edge spa-edge-right" d="M548 560 578 560 766 130 743 121Z" />
+            <path class="spa-curb spa-curb-left" d="M129 560 162 560 226 507 190 501Zm119-93 35-29-27-7-37 31Zm73-61 34-29-20-8-36 30Zm71-59 31-26-16-8-32 27Zm65-54 29-24-14-7-29 25Zm59-49 27-23-12-7-28 24Zm55-46 25-21-10-6-26 22Z" />
+            <path class="spa-curb spa-curb-right" d="M548 560 578 560 607 495 577 493Zm43-100 28-64-24 1-28 64Zm43-99 27-61-19 1-27 61Zm40-91 25-56-16 2-24 55Zm37-83 23-51-13 1-22 50Z" />
+            <path class="spa-centerline" d="M424 555 448 555 696 140 686 138Z" />
+            <g class="spa-guardrail">
+              <path d="M49 454 274 366 482 271 660 179" />
+              <path d="M58 476 283 386 491 291 668 199" />
+              <path d="m88 443-7 58m87-91-7 59m94-96-5 57m92-98-3 54m89-96-2 49m84-93-1 46m78-88v42" />
+            </g>
+            <path class="car-ground-shadow" d="M217 480c59-25 218-46 311-34 33 5 39 21 10 36-82 41-251 66-319 43-25-8-26-34-2-45Z" />
+            <g class="hill-car" transform="rotate(-10 390 397)">
+              <path class="hill-tire" d="M224 398c-14 8-22 31-18 59 5 33 21 53 40 47 18-6 27-34 19-65-7-30-24-50-41-41Z" />
+              <path class="hill-tire" d="M501 350c-16 4-27 26-26 53 1 31 16 53 35 50 19-3 31-28 27-57-4-29-19-48-36-46Z" />
+              <path class="hill-car-body" d="m237 411 39-106 58-53 112-17 71 54 27 111-55 43-211 52-65-28 24-56Z" />
+              <path class="hill-orange-panel" d="m219 446 58 27 213-52 50-39 4 18-55 43-211 52-65-28Z" />
+              <path class="hill-roof" d="m315 306 36-52 84-13 53 50-173 15Z" />
+              <path class="hill-window" d="m333 294 27-31 65-10 38 30-130 11Z" />
+              <path class="hill-window-split" d="m395 257 6 32" />
+              <path class="hill-stripe" d="m244 390 288-57 7 31-310 64Z" />
+              <path class="hill-bumper" d="m278 471 211-52 39-29 12 18-48 38-211 52Z" />
+              <path class="hill-tail-light" d="m263 386 47-12-8 31-50 12Z" />
+              <path class="hill-tail-light" d="m477 343 39-7 11 25-43 10Z" />
+              <path class="hill-grille" d="m330 420 112-26 7 24-113 28Z" />
+              <path class="hill-car-line" d="m318 307 18 113m151-128-44 102m-166-89 40 2m170-16 30-2" />
+              <text class="hill-number" x="373" y="385" transform="rotate(-12 373 385)">24</text>
+              <text class="hill-name" x="316" y="458" transform="rotate(-13 316 458)">BEAVER DAM</text>
+            </g>
+            <g class="spa-sign" transform="translate(578 105) rotate(-7)">
+              <path d="M0 0h128v45H0z" />
+              <text x="64" y="30">UPHILL</text>
+            </g>
           </svg>
           <div class="scrutineering-tag">
             <span>BDR–001</span>
@@ -134,7 +174,7 @@
           </div>
           <div class="cause-copy">
             <p>The Alzheimer’s Association’s Do What You Love program gives communities a flexible way to turn almost any activity into a fundraiser. We’re bringing a race car.</p>
-            <a class="button button-light" href="https://events.alz.org/event/dowhatyoulove/register-select" target="_blank" rel="noreferrer">Explore the program <span aria-hidden="true">↗</span></a>
+            <a class="button button-light" href="https://events.alz.org/event/dowhatyoulove/register-select" target="_blank" rel="noreferrer">Explore the program <svg class="icon" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a>
             <small>Beaver Dam Racing is independently operated. Alzheimer’s Association name use and fundraising activity will follow the parties’ written agreement and approved campaign materials.</small>
           </div>
           <div class="cause-rings" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -160,9 +200,9 @@
             <div class="driver-hover">
               <strong>Wade Bennett</strong>
               <p>An Oregon State alumnus, former nursing home administrator, and founding driver, Wade brings both Beaver roots and direct experience with residents and families affected by memory loss.</p>
-              <span>View LinkedIn profile ↗</span>
+              <span>View LinkedIn profile <svg class="icon" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></span>
             </div>
-            <span class="card-arrow" aria-hidden="true">↗</span>
+            <svg class="card-arrow icon" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg>
           </a>
           <a class="driver-card" href="https://www.linkedin.com/in/muhammad-yousif00/" target="_blank" rel="noreferrer" data-reveal>
             <span class="driver-number">02</span>
@@ -173,9 +213,9 @@
             <div class="driver-hover">
               <strong>Muhammad Yousif</strong>
               <p>A founding driver helping build the team, the car, and a respectful season-one platform that points supporters directly to the Alzheimer’s Association.</p>
-              <span>View LinkedIn profile ↗</span>
+              <span>View LinkedIn profile <svg class="icon" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></span>
             </div>
-            <span class="card-arrow" aria-hidden="true">↗</span>
+            <svg class="card-arrow icon" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg>
           </a>
           <a class="driver-card" href="https://www.linkedin.com/in/jamesgreysea/" target="_blank" rel="noreferrer" data-reveal>
             <span class="driver-number">03</span>
@@ -186,9 +226,9 @@
             <div class="driver-hover">
               <strong>James Grey</strong>
               <p>An Oregon State alumnus and former memory care facility administrator, James is a founding driver and head of operations with a direct connection to the people and families at the heart of the cause.</p>
-              <span>View LinkedIn profile ↗</span>
+              <span>View LinkedIn profile <svg class="icon" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></span>
             </div>
-            <span class="card-arrow" aria-hidden="true">↗</span>
+            <svg class="card-arrow icon" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg>
           </a>
           <article class="driver-card driver-open" data-reveal>
             <span class="driver-number">04</span>
@@ -196,7 +236,7 @@
               <div class="driver-monogram">?</div>
               <div><p>Fourth driver</p><h3>Seat open</h3></div>
             </div>
-            <span class="card-arrow" aria-hidden="true">→</span>
+            <svg class="card-arrow icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg>
           </article>
         </div>
       </section>
@@ -208,7 +248,7 @@
         </div>
         <div class="sponsor-copy">
           <p>Every good dam starts with the right logs. We’re looking for practical partners: safety suppliers, garages, parts experts, storytellers, and mission-aligned sponsors ready to help the team—and the impact—take shape.</p>
-          <a class="button button-primary" href="https://www.linkedin.com/in/jamesgreysea/" target="_blank" rel="noreferrer">Message James on LinkedIn <span aria-hidden="true">↗</span></a>
+          <a class="button button-primary" href="https://www.linkedin.com/in/jamesgreysea/" target="_blank" rel="noreferrer">Message James on LinkedIn <svg class="icon" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a>
         </div>
       </section>
     </main>
@@ -220,7 +260,6 @@
       <p class="footer-line">Give a dam. Race for the cause.</p>
       <div class="footer-meta">
         <span>© <span data-year></span> Beaver Dam Racing</span>
-        <a href="https://github.com/james-grey-magical/papertrail" target="_blank" rel="noreferrer">GitHub ↗</a>
       </div>
     </footer>
   </body>

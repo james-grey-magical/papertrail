@@ -66,6 +66,8 @@ img, svg { display: block; max-width: 100%; }
 .button-small { min-height: 44px; padding-inline: 17px; }
 .text-link { display: inline-flex; gap: 8px; align-items: center; padding-block: 5px; border-bottom: 1px solid currentColor; font-size: 13px; font-weight: 800; letter-spacing: .06em; text-decoration: none; text-transform: uppercase; }
 .text-link:hover { color: var(--orange-dark); }
+.icon-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.icon { width: 1.1em; height: 1.1em; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
 .hero { min-height: 820px; padding-top: 150px; display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 10px; }
 .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 24px; font-size: 12px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
@@ -80,19 +82,30 @@ em { color: var(--orange); font-style: normal; }
 .hero-art { position: relative; min-height: 570px; align-self: stretch; }
 .sun-disc { position: absolute; width: min(42vw, 560px); aspect-ratio: 1; top: 50%; left: 55%; transform: translate(-50%,-50%); border-radius: 50%; background: var(--orange); }
 .sun-disc::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: repeating-linear-gradient(0deg, transparent 0 18px, rgba(23,23,19,.1) 18px 20px); }
-.race-car { position: absolute; z-index: 2; width: min(56vw, 770px); left: 48%; top: 52%; transform: translate(-50%,-50%) rotate(-2deg); filter: drop-shadow(10px 16px 0 rgba(23,23,19,.13)); }
-.car-shadow { fill: rgba(23,23,19,.25); }
-.car-body { fill: var(--paper); stroke: var(--ink); stroke-width: 8; stroke-linejoin: round; }
-.car-roof { fill: var(--ink); stroke: var(--ink); stroke-width: 6; }
-.window { fill: var(--purple-light); }
-.paper-stripe { fill: var(--orange); }
-.purple-stripe { fill: var(--purple); }
-.door-line { fill: none; stroke: var(--ink); stroke-width: 5; }
-.wheel-outer { fill: var(--ink); stroke: var(--paper); stroke-width: 7; }
-.wheel-inner { fill: var(--orange); stroke: var(--ink); stroke-width: 8; }
-.headlight { fill: #f9ef7f; stroke: var(--ink); stroke-width: 5; }
-.car-number { fill: var(--ink); font: 900 56px var(--display); }
-.car-name { fill: var(--ink); font: 900 16px var(--display); letter-spacing: 1.5px; }
+.spa-scene { position: absolute; z-index: 2; width: min(59vw, 820px); left: 49%; top: 51%; transform: translate(-50%,-50%); overflow: visible; filter: drop-shadow(10px 16px 0 rgba(23,23,19,.13)); }
+.spa-forest { fill: var(--ink); }
+.spa-runoff { fill: var(--paper-deep); stroke: var(--ink); stroke-width: 7; stroke-linejoin: round; }
+.spa-track { fill: #8c887d; stroke: var(--ink); stroke-width: 7; stroke-linejoin: round; }
+.spa-track-shadow { fill: rgba(23,23,19,.12); }
+.spa-edge { fill: var(--paper); stroke: var(--ink); stroke-width: 3; }
+.spa-curb { fill: var(--orange); }
+.spa-centerline { fill: var(--paper); opacity: .78; }
+.spa-guardrail { fill: none; stroke: var(--ink); stroke-width: 7; stroke-linecap: square; stroke-linejoin: bevel; }
+.car-ground-shadow { fill: rgba(23,23,19,.28); }
+.hill-tire { fill: var(--ink); stroke: var(--paper); stroke-width: 5; }
+.hill-car-body { fill: var(--paper); stroke: var(--ink); stroke-width: 9; stroke-linejoin: round; }
+.hill-orange-panel { fill: var(--orange); stroke: var(--ink); stroke-width: 4; stroke-linejoin: round; }
+.hill-roof { fill: var(--ink); stroke: var(--ink); stroke-width: 8; stroke-linejoin: round; }
+.hill-window { fill: var(--purple-light); stroke: var(--ink); stroke-width: 5; }
+.hill-window-split { fill: none; stroke: var(--ink); stroke-width: 5; }
+.hill-stripe { fill: var(--orange); stroke: var(--ink); stroke-width: 4; stroke-linejoin: round; }
+.hill-bumper, .hill-grille { fill: var(--ink); }
+.hill-tail-light { fill: var(--orange); stroke: var(--ink); stroke-width: 5; stroke-linejoin: round; }
+.hill-car-line { fill: none; stroke: var(--ink); stroke-width: 5; }
+.hill-number { fill: var(--ink); font: 900 54px var(--display); }
+.hill-name { fill: var(--paper); font: 900 17px var(--display); letter-spacing: 1.2px; }
+.spa-sign path { fill: var(--orange); stroke: var(--ink); stroke-width: 6; }
+.spa-sign text { fill: var(--ink); font: 900 21px var(--display); letter-spacing: 2px; text-anchor: middle; }
 .speed-line { position: absolute; height: 7px; background: var(--ink); transform: skewX(-25deg); }
 .speed-line-one { top: 36%; left: 0; width: 26%; }
 .speed-line-two { top: 66%; right: 0; width: 33%; }
@@ -146,11 +159,11 @@ a.driver-card:hover { color: var(--paper); background: var(--ink); }
 .driver-monogram { width: 148px; aspect-ratio: 1; margin-inline: auto; display: grid; place-items: center; border-radius: 50%; color: var(--paper); background: var(--ink); font: 900 58px var(--display); transition: transform .25s ease, background .25s ease; }
 .driver-card p { margin: 0 0 4px; color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
 .driver-card h3 { margin: 0; font: 900 27px var(--display); letter-spacing: .01em; text-transform: uppercase; }
-.card-arrow { position: absolute; right: 18px; bottom: 18px; font-size: 24px; }
+.card-arrow { position: absolute; right: 18px; bottom: 18px; width: 24px; height: 24px; }
 .driver-hover { position: absolute; z-index: 2; inset: 52px 16px 16px; display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; opacity: 0; transform: translateY(12px); color: var(--ink); background: var(--orange); transition: opacity .2s ease, transform .2s ease; }
 .driver-hover strong { font: 900 28px var(--display); text-transform: uppercase; }
 .driver-hover p { margin: 12px 0 22px; color: var(--ink); font-size: 14px; font-weight: 650; line-height: 1.45; letter-spacing: 0; text-transform: none; }
-.driver-hover span { font-size: 11px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.driver-hover span { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
 a.driver-card:hover .driver-face, a.driver-card:focus-visible .driver-face { opacity: 0; transform: scale(.96); }
 a.driver-card:hover .driver-hover, a.driver-card:focus-visible .driver-hover { opacity: 1; transform: translateY(0); }
 a.driver-card:hover .card-arrow, a.driver-card:focus-visible .card-arrow { z-index: 3; color: var(--ink); }
@@ -174,7 +187,7 @@ a.driver-card:hover .card-arrow, a.driver-card:focus-visible .card-arrow { z-ind
   .hero { min-height: auto; grid-template-columns: 1fr; padding-top: 165px; }
   .hero-art { min-height: 500px; }
   .sun-disc { width: 520px; max-width: 90vw; }
-  .race-car { width: 760px; max-width: 110vw; }
+  .spa-scene { width: 780px; max-width: 112vw; }
   .mission-grid, .cause-card, .team-heading, .sponsor { grid-template-columns: 1fr; }
   .driver-grid { grid-template-columns: repeat(2,1fr); }
   .site-footer { grid-template-columns: 1fr 1fr; }
