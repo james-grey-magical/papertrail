@@ -1,4 +1,4 @@
-name: Deploy Paper Trail Racing to GitHub Pages
+name: Deploy Beaver Dam Racing to GitHub Pages
 
 on:
   push:
