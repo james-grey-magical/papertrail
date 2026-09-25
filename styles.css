@@ -51,8 +51,8 @@ img, svg { display: block; max-width: 100%; }
   transition: box-shadow .25s ease, top .25s ease;
 }
 .site-header.is-scrolled { top: 8px; box-shadow: 0 14px 44px rgba(23,23,19,.12); }
-.brand { display: inline-flex; gap: 11px; align-items: center; font-family: var(--display); font-size: 18px; line-height: .9; letter-spacing: .04em; text-decoration: none; text-transform: uppercase; }
-.brand img { width: 45px; height: 45px; }
+.brand { display: inline-flex; align-items: center; text-decoration: none; }
+.brand img { width: clamp(172px, 17vw, 228px); height: auto; }
 .site-nav { display: flex; align-items: center; gap: 28px; }
 .site-nav > a { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
 .site-nav > a:not(.button):hover { color: var(--orange-dark); }
@@ -162,9 +162,8 @@ a.driver-card:hover .card-arrow, a.driver-card:focus-visible .card-arrow { z-ind
 .sponsor-copy p { margin-top: 0; font-size: 20px; }
 
 .site-footer { padding: 55px 0 30px; display: grid; grid-template-columns: 1fr 1.4fr 1fr; align-items: end; gap: 30px; border-top: 1px solid var(--ink); }
-.footer-brand { display: flex; align-items: center; gap: 13px; }
-.footer-brand p { font: 900 19px/.95 var(--display); text-transform: uppercase; }
-.footer-brand span { color: var(--muted); font: 700 11px var(--sans); letter-spacing: .1em; }
+.footer-brand { display: flex; align-items: center; }
+.footer-brand img { width: min(100%, 250px); height: auto; }
 .footer-line { margin: 0; text-align: center; font: 900 clamp(24px,3vw,45px)/1 var(--display); text-transform: uppercase; }
 .footer-meta { display: flex; justify-content: flex-end; gap: 15px; flex-wrap: wrap; color: var(--muted); font-size: 11px; text-transform: uppercase; }
 
@@ -185,6 +184,7 @@ a.driver-card:hover .card-arrow, a.driver-card:focus-visible .card-arrow { z-ind
 @media (max-width: 720px) {
   .section-shell { width: min(calc(100% - 28px), var(--max)); }
   .site-header { width: calc(100% - 20px); top: 10px; }
+  .brand img { width: 164px; }
   .nav-toggle { width: 44px; height: 44px; display: grid; place-content: center; gap: 5px; border: 0; color: inherit; background: transparent; }
   .nav-toggle > span:not(.sr-only) { display: block; width: 24px; height: 2px; background: var(--ink); transition: transform .2s ease, opacity .2s ease; }
   .nav-toggle[aria-expanded="true"] > span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
