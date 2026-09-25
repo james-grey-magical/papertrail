@@ -8,4 +8,4 @@ Serve the repository with any static web server, then open `index.html` through 
 
 ## Publishing
 
-The site deploys to GitHub Pages through `.github/workflows/pages.yml`. Before the fundraising launch, replace the campaign-status note with the approved Beaver Dam Racing fundraiser URL and run final legal/partner copy approval. Charitable donations should continue to flow through the official partner campaign rather than through the team's operating account.
+The site deploys to GitHub Pages through `.github/workflows/pages.yml`. The official Beaver Dam Racing fundraiser is `https://events.alz.org/fundraisers/jamesgrey/beaver-dam-racing`. Charitable donations flow through the Alzheimer’s Association campaign rather than through the team's operating account.
